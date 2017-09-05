@@ -1,0 +1,6 @@
+framework module Pods_AFNetDemo {
+  umbrella header "Pods-AFNetDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
