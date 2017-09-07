@@ -85,6 +85,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return The certificates included in the given bundle.
  */
+
+//返回指定bundle中的证书。如果使用AFNetworking的证书验证 ，就必须实现此方法，并且使用policyWithPinningMode:withPinnedCertificates 方法来创建实例对象。
 + (NSSet <NSData *> *)certificatesInBundle:(NSBundle *)bundle;
 
 ///-----------------------------------------
@@ -96,6 +98,14 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return The default security policy.
  */
+
+// 默认的实例对象，默认的认证设置为：
+
+//1. 不允许无效或过期的证书
+//
+//2. 验证domain名称
+//
+//3. 不对证书和公钥进行验
 + (instancetype)defaultPolicy;
 
 ///---------------------
@@ -135,6 +145,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return Whether or not to trust the server.
  */
+
+//核心方法 在urlsession的代理回调中调用
 - (BOOL)evaluateServerTrust:(SecTrustRef)serverTrust
                   forDomain:(nullable NSString *)domain;
 
