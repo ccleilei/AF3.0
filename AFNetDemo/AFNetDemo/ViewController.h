@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
 
+@interface User :NSObject
+@property (nonatomic,strong)NSString *name;
+@property (nonatomic,assign)NSUInteger age;
+@end
+@interface Card :NSObject
+@property (nonatomic,strong)NSString *infor;
+@property (nonatomic,strong)User *user;
+@end
+@interface ViewController : UIViewController
+{
+    User *user;
+    Card *card;
+}
 
 @end
-

@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB14029F1F60EE9100FD447E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB14029D1F60EE9100FD447E /* Main.storyboard */; };
+		AB1402A21F60EEA500FD447E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1402A01F60EEA500FD447E /* LaunchScreen.storyboard */; };
+		AB1402A71F60FC2000FD447E /* TestNSInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1402A61F60FC2000FD447E /* TestNSInputStream.m */; };
 		AB4DFC6D1F550D78000E418C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4DFC6C1F550D78000E418C /* main.m */; };
 		AB4DFC701F550D78000E418C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4DFC6F1F550D78000E418C /* AppDelegate.m */; };
 		AB4DFC731F550D78000E418C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4DFC721F550D78000E418C /* ViewController.m */; };
-		AB4DFC761F550D78000E418C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB4DFC741F550D78000E418C /* Main.storyboard */; };
 		AB4DFC781F550D78000E418C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4DFC771F550D78000E418C /* Assets.xcassets */; };
-		AB4DFC7B1F550D78000E418C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB4DFC791F550D78000E418C /* LaunchScreen.storyboard */; };
 		AB4DFC861F550D78000E418C /* AFNetDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4DFC851F550D78000E418C /* AFNetDemoTests.m */; };
 		AB4DFC911F550D79000E418C /* AFNetDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4DFC901F550D79000E418C /* AFNetDemoUITests.m */; };
 		E01F7F581F8C646EC2A84525 /* Pods_AFNetDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9245B17299AF3DF3FC74B07E /* Pods_AFNetDemo.framework */; };
@@ -38,15 +39,17 @@
 /* Begin PBXFileReference section */
 		0AEA1641BE37248361029102 /* Pods-AFNetDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFNetDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFNetDemo/Pods-AFNetDemo.release.xcconfig"; sourceTree = "<group>"; };
 		9245B17299AF3DF3FC74B07E /* Pods_AFNetDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AFNetDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB14029E1F60EE9100FD447E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AB1402A11F60EEA500FD447E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AB1402A51F60FC2000FD447E /* TestNSInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNSInputStream.h; sourceTree = "<group>"; };
+		AB1402A61F60FC2000FD447E /* TestNSInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNSInputStream.m; sourceTree = "<group>"; };
 		AB4DFC681F550D78000E418C /* AFNetDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFNetDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4DFC6C1F550D78000E418C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB4DFC6E1F550D78000E418C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB4DFC6F1F550D78000E418C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AB4DFC711F550D78000E418C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		AB4DFC721F550D78000E418C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AB4DFC751F550D78000E418C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB4DFC771F550D78000E418C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AB4DFC7A1F550D78000E418C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB4DFC7C1F550D78000E418C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB4DFC811F550D78000E418C /* AFNetDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AFNetDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4DFC851F550D78000E418C /* AFNetDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetDemoTests.m; sourceTree = "<group>"; };
@@ -120,9 +123,11 @@
 				AB4DFC6F1F550D78000E418C /* AppDelegate.m */,
 				AB4DFC711F550D78000E418C /* ViewController.h */,
 				AB4DFC721F550D78000E418C /* ViewController.m */,
-				AB4DFC741F550D78000E418C /* Main.storyboard */,
+				AB1402A51F60FC2000FD447E /* TestNSInputStream.h */,
+				AB1402A61F60FC2000FD447E /* TestNSInputStream.m */,
+				AB1402A01F60EEA500FD447E /* LaunchScreen.storyboard */,
+				AB14029D1F60EE9100FD447E /* Main.storyboard */,
 				AB4DFC771F550D78000E418C /* Assets.xcassets */,
-				AB4DFC791F550D78000E418C /* LaunchScreen.storyboard */,
 				AB4DFC7C1F550D78000E418C /* Info.plist */,
 				AB4DFC6B1F550D78000E418C /* Supporting Files */,
 			);
@@ -274,9 +279,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4DFC7B1F550D78000E418C /* LaunchScreen.storyboard in Resources */,
+				AB1402A21F60EEA500FD447E /* LaunchScreen.storyboard in Resources */,
 				AB4DFC781F550D78000E418C /* Assets.xcassets in Resources */,
-				AB4DFC761F550D78000E418C /* Main.storyboard in Resources */,
+				AB14029F1F60EE9100FD447E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +357,7 @@
 				AB4DFC731F550D78000E418C /* ViewController.m in Sources */,
 				AB4DFC701F550D78000E418C /* AppDelegate.m in Sources */,
 				AB4DFC6D1F550D78000E418C /* main.m in Sources */,
+				AB1402A71F60FC2000FD447E /* TestNSInputStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,18 +393,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AB4DFC741F550D78000E418C /* Main.storyboard */ = {
+		AB14029D1F60EE9100FD447E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AB4DFC751F550D78000E418C /* Base */,
+				AB14029E1F60EE9100FD447E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		AB4DFC791F550D78000E418C /* LaunchScreen.storyboard */ = {
+		AB1402A01F60EEA500FD447E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AB4DFC7A1F550D78000E418C /* Base */,
+				AB1402A11F60EEA500FD447E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7KW6E4PC7H;
 				INFOPLIST_FILE = AFNetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfzd.AFNetDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +523,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7KW6E4PC7H;
 				INFOPLIST_FILE = AFNetDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xfzd.AFNetDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

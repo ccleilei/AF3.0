@@ -196,6 +196,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @warning In order for network reachability to be monitored, include the `SystemConfiguration` framework in the active target's "Link Binary With Library" build phase, and add `#import <SystemConfiguration/SystemConfiguration.h>` to the header prefix of the project (`Prefix.pch`).
  */
+//
 FOUNDATION_EXPORT NSString * const AFNetworkingReachabilityDidChangeNotification;
 FOUNDATION_EXPORT NSString * const AFNetworkingReachabilityNotificationStatusItem;
 

@@ -343,7 +343,7 @@ forHTTPHeaderField:(NSString *)field
 }
 
 #pragma mark -
-
+// 根据这个方法的注释，当method为GET/HEAD/DELETE 时，参数会被拼接到URL中，其他情况则会当做requset的body处理。
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
                                  URLString:(NSString *)URLString
                                 parameters:(id)parameters
@@ -369,7 +369,11 @@ forHTTPHeaderField:(NSString *)field
 
 	return mutableRequest;
 }
-
+//这个方法支持上传数据，值得注意的是之所以能够把本地磁盘或者内存中的数据发送到服务器，是因为NSURLRequest 有两个属性 ：
+//
+//NSData *HTTPBody;
+//
+//NSInputStream *HTTPBodyStream;
 - (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method
                                               URLString:(NSString *)URLString
                                              parameters:(NSDictionary *)parameters
@@ -406,7 +410,7 @@ forHTTPHeaderField:(NSString *)field
 
     return [formData requestByFinalizingMultipartFormData];
 }
-
+//这个方法可以把一个请求中的body数据保存到一个文件中，然后返回一个HTTPBodyStream为nil的请求，按照注释说的，NSURLSessionTask在使用流传数据时。如果没拼接Content-Length 会有问题。然后可以把这文件上传或者把它转为二进制文件上传。
 - (NSMutableURLRequest *)requestWithMultipartFormRequest:(NSURLRequest *)request
                              writingStreamContentsToFile:(NSURL *)fileURL
                                        completionHandler:(void (^)(NSError *error))handler
@@ -793,7 +797,16 @@ NSTimeInterval const kAFUploadStream3GSuggestedDelay = 0.2;
 
     [self.bodyStream appendHTTPBodyPart:bodyPart];
 }
-
+/*
+ 这些知名的第三方网络框架都有对Newtork Throttle的支持，你可能会好奇，我们为什么要对自己发出的网络请求做流量控制，难道不应该尽可能最大限度的利用带宽吗？
+ 
+ 此处需要科普一点TCP协议相关的知识。我们通过HTTP请求发送数据的时候，实际上数据是以Packet的形式存在于一个Send Buffer中的，应用层平时感知不到这个Buffer的存在。TCP提供可靠的传输，在弱网环境下，一个Packet一次传输失败的概率会升高，即使一次失败，TCP并不会马上认为请求失败了，而是会继续重试一段时间，同时TCP还保证Packet的有序传输，意味着前面的Packet如果不被ack，后面的Packet就会继续等待，如果我们一次往Send Buffer中写入大量的数据，那么在弱网环境下，排在后面的Packet失败的概率会变高，也就意味着我们HTTP请求失败的几率会变大
+ 
+ 作者：muyang_js的简书
+ 链接：http://www.jianshu.com/p/3226890dedb3
+ 來源：简书
+ 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ */
 - (void)throttleBandwidthWithPacketSize:(NSUInteger)numberOfBytes
                                   delay:(NSTimeInterval)delay
 {
@@ -878,7 +891,7 @@ NSTimeInterval const kAFUploadStream3GSuggestedDelay = 0.2;
 }
 
 #pragma mark - NSInputStream
-
+//从流中读取数据到 buffer 中，buffer 的长度不应少于 len，该接口返回实际读取的数据长度（该长度最大为 len）
 - (NSInteger)read:(uint8_t *)buffer
         maxLength:(NSUInteger)length
 {
