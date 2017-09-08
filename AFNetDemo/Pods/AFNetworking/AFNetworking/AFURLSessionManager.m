@@ -1025,6 +1025,7 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
     if (self.taskDidReceiveAuthenticationChallenge) {
         disposition = self.taskDidReceiveAuthenticationChallenge(session, task, challenge, &credential);
     } else {
+        // 1.判断本次鉴别挑战的类型，NSURLAuthenticationMethodServerTrust是验证服务器身份
         if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
             if ([self.securityPolicy evaluateServerTrust:challenge.protectionSpace.serverTrust forDomain:challenge.protectionSpace.host]) {
                 disposition = NSURLSessionAuthChallengeUseCredential;
