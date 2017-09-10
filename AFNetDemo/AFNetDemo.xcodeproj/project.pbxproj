@@ -62,6 +62,7 @@
 		ABE432461F6153CF0077BC17 /* setReachabilityStatusChangeBlock：.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "setReachabilityStatusChangeBlock：.docx"; path = "../../setReachabilityStatusChangeBlock：.docx"; sourceTree = "<group>"; };
 		ABE432481F650F1E0077BC17 /* server.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = server.key; path = ../../server.key; sourceTree = "<group>"; };
 		ABE432501F6515280077BC17 /* cer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cer; path = ../cer; sourceTree = "<group>"; };
+		ABE432541F6552BC0077BC17 /* AFNetwork技术分享文档.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AFNetwork技术分享文档.docx"; path = "../../AFNetwork技术分享文档.docx"; sourceTree = "<group>"; };
 		B9A1F30DF8A6D787D0886F1C /* Pods-AFNetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFNetDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFNetDemo/Pods-AFNetDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +145,7 @@
 		AB4DFC6B1F550D78000E418C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ABE432541F6552BC0077BC17 /* AFNetwork技术分享文档.docx */,
 				ABE432461F6153CF0077BC17 /* setReachabilityStatusChangeBlock：.docx */,
 				AB4DFC6C1F550D78000E418C /* main.m */,
 			);
