@@ -10,6 +10,7 @@
 #import "AFNetworkReachabilityManager.h"
 #import "AFNetworking.h"
 #import "AFSecurityPolicy.h"
+#import <AssertMacros.h>
 @implementation Card
 - (NSString *)info {
     return [NSString stringWithFormat:@"%@/%lu",_user.name,(unsigned long)_user.age];
@@ -46,7 +47,7 @@ static void *PersonAccountBalanceContext = &PersonAccountBalanceContext;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self CfReach];
+    [self builtin_expect];
 }
 
 //
@@ -118,8 +119,13 @@ static void ReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNet
         
     }];
 }
-//afnet
-
+//•	__builtin_expect
+- (void)builtin_expect {
+    __Require_Quiet(0, _out);
+    NSLog(@"我成了");
+_out:
+    NSLog(@"我没成");
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
