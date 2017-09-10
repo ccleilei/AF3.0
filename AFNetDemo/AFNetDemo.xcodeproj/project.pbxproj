@@ -16,6 +16,8 @@
 		AB4DFC781F550D78000E418C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB4DFC771F550D78000E418C /* Assets.xcassets */; };
 		AB4DFC861F550D78000E418C /* AFNetDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4DFC851F550D78000E418C /* AFNetDemoTests.m */; };
 		AB4DFC911F550D79000E418C /* AFNetDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4DFC901F550D79000E418C /* AFNetDemoUITests.m */; };
+		ABE4324C1F6513FA0077BC17 /* server.key in Resources */ = {isa = PBXBuildFile; fileRef = ABE432481F650F1E0077BC17 /* server.key */; };
+		ABE432511F6515290077BC17 /* cer in Resources */ = {isa = PBXBuildFile; fileRef = ABE432501F6515280077BC17 /* cer */; };
 		E01F7F581F8C646EC2A84525 /* Pods_AFNetDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9245B17299AF3DF3FC74B07E /* Pods_AFNetDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		AB4DFC901F550D79000E418C /* AFNetDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetDemoUITests.m; sourceTree = "<group>"; };
 		AB4DFC921F550D79000E418C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABE432461F6153CF0077BC17 /* setReachabilityStatusChangeBlock：.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = "setReachabilityStatusChangeBlock：.docx"; path = "../../setReachabilityStatusChangeBlock：.docx"; sourceTree = "<group>"; };
+		ABE432481F650F1E0077BC17 /* server.key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = server.key; path = ../../server.key; sourceTree = "<group>"; };
+		ABE432501F6515280077BC17 /* cer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cer; path = ../cer; sourceTree = "<group>"; };
 		B9A1F30DF8A6D787D0886F1C /* Pods-AFNetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFNetDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFNetDemo/Pods-AFNetDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +102,7 @@
 		AB4DFC5F1F550D78000E418C = {
 			isa = PBXGroup;
 			children = (
+				ABE432501F6515280077BC17 /* cer */,
 				AB4DFC6A1F550D78000E418C /* AFNetDemo */,
 				AB4DFC841F550D78000E418C /* AFNetDemoTests */,
 				AB4DFC8F1F550D79000E418C /* AFNetDemoUITests */,
@@ -124,6 +129,7 @@
 				AB4DFC6F1F550D78000E418C /* AppDelegate.m */,
 				AB4DFC711F550D78000E418C /* ViewController.h */,
 				AB4DFC721F550D78000E418C /* ViewController.m */,
+				ABE432481F650F1E0077BC17 /* server.key */,
 				AB1402A51F60FC2000FD447E /* TestNSInputStream.h */,
 				AB1402A61F60FC2000FD447E /* TestNSInputStream.m */,
 				AB1402A01F60EEA500FD447E /* LaunchScreen.storyboard */,
@@ -281,9 +287,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE4324C1F6513FA0077BC17 /* server.key in Resources */,
 				AB1402A21F60EEA500FD447E /* LaunchScreen.storyboard in Resources */,
 				AB4DFC781F550D78000E418C /* Assets.xcassets in Resources */,
 				AB14029F1F60EE9100FD447E /* Main.storyboard in Resources */,
+				ABE432511F6515290077BC17 /* cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

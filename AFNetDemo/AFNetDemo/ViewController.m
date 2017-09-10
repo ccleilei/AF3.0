@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "AFNetworkReachabilityManager.h"
-
+#import "AFNetworking.h"
+#import "AFSecurityPolicy.h"
 @implementation Card
 - (NSString *)info {
     return [NSString stringWithFormat:@"%@/%lu",_user.name,(unsigned long)_user.age];
@@ -34,12 +35,6 @@
 
 @end
 @implementation User
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    NSLog(@"xxxx");
-}
-
-
 @end
 @interface ViewController ()<NSStreamDelegate>
 
@@ -51,7 +46,7 @@ static void *PersonAccountBalanceContext = &PersonAccountBalanceContext;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self scf];
+    [self CfReach];
 }
 
 //
@@ -80,19 +75,26 @@ static void *PersonAccountBalanceContext = &PersonAccountBalanceContext;
     
 }
 
+typedef void (^ReachabilityStatusCallback)(int status);
 
 static void ReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNetworkReachabilityFlags flags, void *info){
     NSLog(@"%d",flags);
-    
+  ReachabilityStatusCallback bloc = (__bridge ReachabilityStatusCallback)info;
+    if (bloc) {
+        bloc(flags);
+    }
 }
 
-- (void) scf{
+- (void)CfReach{
+    ReachabilityStatusCallback statusBack = ^(int su){
+        NSLog(@"哈哈");
+    };
     SCNetworkReachabilityRef scfReach = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, [@"www.aachuxing.com" UTF8String]);
-   // SCNetworkConnectionContext contex = {0, (__bridge void *)block,retainCallBack,reaseCallBack,NULL};
-    SCNetworkReachabilitySetCallback(scfReach, ReachabilityCallback, nil);
+    SCNetworkReachabilityContext contex = {0, (__bridge void *)(statusBack),nil,nil,NULL};
+    SCNetworkReachabilitySetCallback(scfReach, ReachabilityCallback,&contex);
     SCNetworkReachabilityScheduleWithRunLoop(scfReach, CFRunLoopGetMain(), kCFRunLoopCommonModes);
 }
-//kvo
+//kvo 键值依赖
 - (void)card {
     user = [[User alloc] init];
     card = [[Card alloc] init];
@@ -100,12 +102,23 @@ static void ReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNet
     [card addObserver:self forKeyPath:@"infor" options:(NSKeyValueObservingOptionNew |
                                                      NSKeyValueObservingOptionOld) context:nil];
     card.user.age = 1;
+    card.user.name =@"haha";
     
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-    NSLog(@"xxxx");
+    NSLog(@"key:%@ change:%@",keyPath,change);
 }
 
+- (void)httpPolicy{
+    AFHTTPSessionManager * manager =[[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://127.0.0.1"]];
+    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:(AFSSLPinningModeCertificate)];
+    [manager GET:@"/info.php" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
+//afnet
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

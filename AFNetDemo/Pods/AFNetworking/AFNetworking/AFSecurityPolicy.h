@@ -23,11 +23,11 @@
 #import <Security/Security.h>
 
 typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
-    //无条件信任证书
+    //不做更严格的验证，只要是系统信任的证书就可以通过验证，不过，它受到allowInvalidCertificates和validatesDomainName的影响
     AFSSLPinningModeNone,
-    //验证公钥
+    //通过比较证书当中公钥(PublicKey)部分来进行验证，通过SecTrustCopyPublicKey方法获取本地证书和服务器证书，然后进行比较，如果有一个相同，则通过验证，此方式主要适用于自建证书搭建的HTTPS服务器和需要较高安全要求的验证；
     AFSSLPinningModePublicKey,
-    //同本地证书验证证书
+    //直接将本地的证书设置为信任的根证书，然后来进行判断，并且比较本地证书的内容和服务器证书内容是否相同，来进行二次判断，此方式适用于较高安全要求的验证。
     AFSSLPinningModeCertificate,
 };
 
