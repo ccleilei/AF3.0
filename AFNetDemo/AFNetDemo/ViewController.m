@@ -25,10 +25,11 @@
 +(NSSet<NSString *> *)keyPathsForValuesAffectingValueForKey:(NSString *)key{
     NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
     NSArray * moreKeyPaths = nil;
-    if ([key isEqualToString:@"infor"]) {
+    if ([key isEqualToString:@"info"]) {
         moreKeyPaths = [NSArray arrayWithObjects:@"user.name",@"user.age",nil];
     }
-    if (moreKeyPaths) {
+    if (moreKeyPaths)
+    {
         keyPaths = [keyPaths setByAddingObjectsFromArray:moreKeyPaths];
     }
     return keyPaths;
@@ -47,7 +48,7 @@ static void *PersonAccountBalanceContext = &PersonAccountBalanceContext;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self builtin_expect];
+    [self reachability];
 }
 
 //
@@ -100,25 +101,26 @@ static void ReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNet
     user = [[User alloc] init];
     card = [[Card alloc] init];
     card.user = user;
-    [card addObserver:self forKeyPath:@"infor" options:(NSKeyValueObservingOptionNew |
-                                                     NSKeyValueObservingOptionOld) context:nil];
+    [card addObserver:self forKeyPath:@"info" options:(NSKeyValueObservingOptionNew |
+                                                   NSKeyValueObservingOptionOld) context:nil];
     card.user.age = 1;
     card.user.name =@"haha";
+    
     
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     NSLog(@"key:%@ change:%@",keyPath,change);
 }
 
-- (void)httpPolicy{
-    AFHTTPSessionManager * manager =[[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://127.0.0.1"]];
-    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:(AFSSLPinningModeCertificate)];
-    [manager GET:@"/info.php" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
-}
+//- (void)httpPolicy{
+//    AFHTTPSessionManager * manager =[[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://127.0.0.1"]];
+//    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:(AFSSLPinningModeCertificate)];
+//    [manager GET:@"/info.php" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        
+//    }];
+//}
 //•	__builtin_expect
 - (void)builtin_expect {
     __Require_Quiet(0, _out);
