@@ -101,7 +101,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return An initialized network reachability manager, actively monitoring the specified socket address.
  */
-//指定端口
+//指定ip
 + (instancetype)managerForAddress:(const void *)address;
 
 /**

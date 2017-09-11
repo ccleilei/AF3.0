@@ -87,7 +87,7 @@ static void ReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNet
     }
 }
 
-- (void)CfReach{
+- (void)CfReach {
     ReachabilityStatusCallback statusBack = ^(int su){
         NSLog(@"哈哈");
     };
